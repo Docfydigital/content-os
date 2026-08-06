@@ -1,0 +1,6 @@
+# NUNCA versionar segredos nem config pessoal do aluno
+secrets.env
+config.json
+__pycache__/
+*.pyc
+/tmp/content-os-*.json

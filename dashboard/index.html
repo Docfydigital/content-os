@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content OS — Sistema Viral</title>
+  <meta name="description" content="Cruze seu perfil com os campeões do nicho. Descubra o padrão e receba o roteiro pronto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="aurora"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚡</span>
+      <div>
+        <h1>Content OS</h1>
+        <p class="tag">Sistema Viral</p>
+      </div>
+    </div>
+    <div class="meta">
+      <span class="pill" id="nicho-pill">Nicho: —</span>
+      <span class="updated" id="updated">Atualizado em —</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h2>O que está <span class="grad">viralizando</span> no seu nicho — e o roteiro pronto pra você gravar.</h2>
+        <p>Cruzamos o seu perfil com os concorrentes campeões, pegamos os melhores vídeos e transformamos o padrão em roteiro de até 50 segundos.</p>
+      </div>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <!-- 1. ANÁLISE -->
+    <section class="block" id="analise-sec">
+      <div class="sec-head">
+        <div class="sec-num">1</div>
+        <div class="txt">
+          <h2 class="section-title">⚔️ Você vs. os campeões</h2>
+          <p class="subtitle" id="analise-sub">Onde os virais te passam a perna — e como virar o jogo.</p>
+        </div>
+      </div>
+      <div class="analysis" id="analysis"></div>
+    </section>
+
+    <!-- 2. TOP VIRAIS -->
+    <section class="block">
+      <div class="sec-head">
+        <div class="sec-num">2</div>
+        <div class="txt">
+          <h2 class="section-title">🔥 Top vídeos campeões</h2>
+          <p class="subtitle">Os melhores do nicho, ranqueados por velocidade de viralização.</p>
+        </div>
+      </div>
+      <div class="net-tabs" id="net-tabs"></div>
+      <div class="cards" id="posts"></div>
+    </section>
+
+    <!-- 3. HOOKS -->
+    <section class="block" id="hooks-sec">
+      <div class="sec-head">
+        <div class="sec-num">3</div>
+        <div class="txt">
+          <h2 class="section-title">🪝 10 hooks pra você usar</h2>
+          <p class="subtitle">Ganchos prontos, adaptados do que funciona no nicho pra sua voz. Toque em copiar e use.</p>
+        </div>
+      </div>
+      <div class="hooks" id="hooks"></div>
+    </section>
+
+    <!-- 4. ROTEIROS -->
+    <section class="block">
+      <div class="sec-head">
+        <div class="sec-num">4</div>
+        <div class="txt">
+          <h2 class="section-title">🎬 Roteiros prontos pra gravar</h2>
+          <p class="subtitle">Formato A/V (visual + áudio), até 50s. Copie o roteiro inteiro e leve pra gravação.</p>
+        </div>
+      </div>
+      <div class="scripts" id="scripts"></div>
+    </section>
+
+    <!-- 5. PADRÕES -->
+    <section class="block">
+      <div class="sec-head">
+        <div class="sec-num">5</div>
+        <div class="txt">
+          <h2 class="section-title">🧬 Padrões que se repetem</h2>
+          <p class="subtitle">Copie o padrão, não o post. É isso que faz viralizar.</p>
+        </div>
+      </div>
+      <div class="patterns" id="patterns"></div>
+    </section>
+
+    <!-- 6. TAKEAWAY -->
+    <section class="block" id="takeaway-sec">
+      <div class="sec-head">
+        <div class="sec-num">6</div>
+        <div class="txt">
+          <h2 class="section-title">💡 A grande sacada da semana</h2>
+          <p class="subtitle">O insight que importa + o que testar já.</p>
+        </div>
+      </div>
+      <div id="takeaway"></div>
+    </section>
+
+    <!-- 7. CALENDÁRIO -->
+    <section class="block">
+      <div class="sec-head">
+        <div class="sec-num">7</div>
+        <div class="txt">
+          <h2 class="section-title">🗓️ Seu calendário da semana</h2>
+          <p class="subtitle">O que postar em cada dia, já pensado a partir dos campeões.</p>
+        </div>
+      </div>
+      <div class="calendar" id="calendar"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Content OS · dados atualizados automaticamente · <span id="foot-date">—</span></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

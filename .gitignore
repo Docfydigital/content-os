@@ -1,0 +1,11 @@
+# segredos e config pessoal — NUNCA versionar
+**/secrets.env
+**/config.json
+
+# deploy / cache
+**/.vercel
+**/__pycache__/
+*.pyc
+
+# saidas intermediarias
+/tmp/content-os-*.json

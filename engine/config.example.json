@@ -1,0 +1,18 @@
+{
+  "_comentario": "Copie este arquivo para config.json e preencha com SEUS perfis. Redes sem 'me' preenchido sao puladas. Instagram/TikTok usam o @ (sem o @). YouTube usa a URL do canal.",
+  "networks": {
+    "instagram": {
+      "me": "SEU_USUARIO_INSTAGRAM",
+      "competitors": ["CONCORRENTE_1", "CONCORRENTE_2"]
+    },
+    "tiktok": {
+      "me": "SEU_USUARIO_TIKTOK",
+      "competitors": ["CONCORRENTE_1"]
+    },
+    "youtube": {
+      "me": "https://www.youtube.com/@SEU_CANAL",
+      "competitors": ["https://www.youtube.com/@CONCORRENTE"]
+    }
+  },
+  "max_transcribe": 6
+}
