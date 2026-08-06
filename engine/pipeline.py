@@ -258,16 +258,25 @@ def build_reel_summary(reels):
 def load_prompt_template():
     """Carrega o prompt-cerebro (o mesmo salvo em references/)."""
     here = os.path.dirname(os.path.abspath(__file__))
-    ref = os.path.join(here, "..", "references", "prompt-analise-roteiros.md")
-    ref = os.path.abspath(ref)
-    if os.path.exists(ref):
-        with open(ref) as f:
-            content = f.read()
-        # extrai o bloco entre a primeira e ultima cerca ```
-        if "```" in content:
-            block = content.split("```", 2)
-            if len(block) >= 3:
-                return block[1].strip()
+    # Busca robusta: funciona tanto na skill (scripts/ + ../references/) quanto
+    # no repo do aluno (engine/ + engine/references/). Também aceita override por env.
+    candidates = [
+        os.environ.get("CONTENT_OS_PROMPT", ""),
+        os.path.join(here, "references", "prompt-analise-roteiros.md"),
+        os.path.join(here, "..", "references", "prompt-analise-roteiros.md"),
+    ]
+    for ref in candidates:
+        if not ref:
+            continue
+        ref = os.path.abspath(ref)
+        if os.path.exists(ref):
+            with open(ref) as f:
+                content = f.read()
+            # extrai o bloco entre a primeira e ultima cerca ```
+            if "```" in content:
+                block = content.split("```", 2)
+                if len(block) >= 3:
+                    return block[1].strip()
     return ""
 
 
