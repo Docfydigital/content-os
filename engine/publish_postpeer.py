@@ -36,7 +36,7 @@ DEFAULT_SECRETS = os.environ.get("CONTENT_OS_SECRETS", os.path.join(HERE, "secre
 DEFAULT_CONFIG = os.environ.get("CONTENT_OS_CONFIG", os.path.join(HERE, "config.json"))
 DEFAULT_DASHBOARD = os.environ.get(
     "CONTENT_OS_DASHBOARD",
-    os.path.abspath(os.path.join(HERE, "..", "..", "content-os-dashboard")),
+    os.path.abspath(os.path.join(HERE, "..", "dashboard")),
 )
 # Postpeer usa nomes de plataforma proprios
 PLATFORM_MAP = {"instagram": "instagram", "tiktok": "tiktok", "youtube": "youtube"}
