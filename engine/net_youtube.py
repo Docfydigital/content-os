@@ -408,6 +408,59 @@ def analyze_comments(gemini_key, comments, log_fn):
     return empty
 
 
+# ---------- Comentarios dos CONCORRENTES: pros x contras por canal ----------
+COMPETITOR_COMMENT_SYSTEM = "\n".join([
+    "# YouTube Competitor Comment Analyzer",
+    "",
+    "**IDIOMA OBRIGATORIO: PT-BR**",
+    "",
+    "Voce e um analista de audiencia expert. Analise os comentarios dos videos de UM CANAL",
+    "CONCORRENTE e extraia PROS e CONTRAS do ponto de vista da audiencia desse canal.",
+    "",
+    "## Categorize em 2 grupos:",
+    "1. **pros**: o que a audiencia ELOGIA/AMA nesse canal (minimo 3 items, cada um com",
+    "   exemplo real de comentario que sustenta o ponto)",
+    "2. **contras**: o que a audiencia RECLAMA ou CRITICA nesse canal (minimo 3 items, cada",
+    "   um com exemplo real de comentario que sustenta o ponto)",
+    "",
+    "## Output Format (JSON):",
+    "{",
+    '  "pros": ["ponto positivo 1 com exemplo de comentario", ...],',
+    '  "contras": ["ponto negativo 1 com exemplo de comentario", ...]',
+    "}",
+    "",
+    "Se nao houver comentarios suficientes pra sustentar um ponto, NAO invente — retorne",
+    "menos items em vez de fabricar.",
+    "Retorne APENAS JSON valido. Sem markdown, sem code fences.",
+])
+
+
+def analyze_competitor_comments(gemini_key, channel_name, comments, log_fn):
+    """Analisa comentarios dos videos de UM concorrente e extrai pros/contras
+    (o que a audiencia dele elogia vs. reclama). Espelha analyze_comments(),
+    mas com 2 categorias focadas em avaliar o canal concorrente, nao o proprio."""
+    empty = {"pros": [], "contras": []}
+    if not comments:
+        return empty
+    comment_texts = "\n".join(
+        f"Comentario {i + 1} ({c.get('likes') or c.get('voteCount') or 0} likes): "
+        f"{(c.get('text') or c.get('comment') or c.get('content') or '')[:300]}"
+        for i, c in enumerate(comments[:150])
+    )
+    try:
+        raw = gemini_chat(
+            gemini_key, COMPETITOR_COMMENT_SYSTEM,
+            f"Canal analisado: {channel_name}\n\n{comment_texts}", max_tokens=3072,
+        )
+    except Exception as e:
+        log_fn(f"pros/contras de @{channel_name} falhou ({str(e)[:60]})")
+        return empty
+    parsed = try_parse_json(raw)
+    if isinstance(parsed, dict):
+        return {"pros": parsed.get("pros", []) or [], "contras": parsed.get("contras", []) or []}
+    return empty
+
+
 # ---------- FASE 1: Niche Outliers ----------
 def run_phase1(competitor_channels, creds, log_fn):
     apify = creds["APIFY_TOKEN"]
@@ -433,7 +486,25 @@ def run_phase1(competitor_channels, creds, log_fn):
         channel_videos.sort(key=_views_of, reverse=True)
         top10 = [normalize_video(v) for v in channel_videos[:10]]
         all_comp_videos.extend(top10)
-        channel_results.append({"channel_name": ch_id, "channel_url": ch_url, "videos": top10})
+
+        # Comentarios dos top videos DESTE concorrente -> pros/contras do canal
+        # (visao da audiencia dele: o que amam vs. o que reclamam)
+        pros_contras = {"pros": [], "contras": []}
+        top_urls = [v["url"] for v in top10[:5] if v.get("url")]
+        if top_urls:
+            try:
+                log_fn(f"coletando comentarios de @{ch_id} (pros/contras)...")
+                comp_comments = scrape_comments(apify, top_urls, 100)
+                log_fn(f"@{ch_id}: {len(comp_comments or [])} comentarios coletados")
+                if comp_comments:
+                    pros_contras = analyze_competitor_comments(gemini, ch_id, comp_comments, log_fn)
+            except Exception as e:
+                log_fn(f"comentarios de @{ch_id} falharam: {str(e)[:80]}")
+
+        channel_results.append({
+            "channel_name": ch_id, "channel_url": ch_url, "videos": top10,
+            "pros": pros_contras.get("pros", []), "contras": pros_contras.get("contras", []),
+        })
         log_fn(f"canal {ch_id}: {len(top10)} videos coletados")
 
     # Achata todos os vídeos e detecta outliers (>= 3x a média) do conjunto inteiro
@@ -674,5 +745,7 @@ def run_youtube(me_channel, competitor_channels, creds, log_fn=None):
         "comment_insights": comment_insights,
         "broad_niche_trends": phase2.get("broad_niche_trends", []),
         "niche_daily": phase2.get("niche_daily", []),
+        # pros/contras por canal concorrente (visao da audiencia deles)
+        "competitor_channels": phase1.get("channels", []),
     }
     return result, my_videos, comp_videos

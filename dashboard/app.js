@@ -68,6 +68,7 @@ function render(data) {
     renderPatterns(data.patterns || []);
     renderTakeaway(data.takeaway);
     renderCalendar(data.calendar || []);
+    renderProsContras(data.competitor_pros_contras || []);
   }
 }
 
@@ -104,6 +105,7 @@ function selectNetwork(key) {
   renderPatterns(n.patterns || []);
   renderTakeaway(n.takeaway);
   renderCalendar(n.calendar || []);
+  renderProsContras(n.competitor_pros_contras || []);
 }
 
 // desenha posts a partir de uma lista (multi-rede) — reusa o mesmo card
@@ -345,6 +347,46 @@ function renderCalendar(cal) {
     d.appendChild(el('div', 'idea', esc(c.ideia)));
     if (c.hook_sugerido) d.appendChild(el('span', 'hooktag', '💡 ' + esc(c.hook_sugerido)));
     wrap.appendChild(d);
+  });
+}
+
+// pros x contras por canal concorrente (exclusivo YouTube — comentários reais da audiência)
+function renderProsContras(channels) {
+  const sec = document.getElementById('proscontras-sec');
+  const wrap = document.getElementById('proscontras');
+  if (!sec || !wrap) return;
+  if (!channels || !channels.length) { sec.style.display = 'none'; return; }
+  sec.style.display = '';
+  wrap.innerHTML = '';
+  channels.forEach((ch) => {
+    const card = el('div', 'pc-card');
+    const title = el('h3', null, esc(ch.canal || ''));
+    if (ch.canal_url) {
+      const link = document.createElement('a');
+      link.href = ch.canal_url; link.target = '_blank'; link.rel = 'noopener';
+      link.style.color = 'inherit'; link.style.textDecoration = 'none';
+      link.textContent = ch.canal || '';
+      title.innerHTML = ''; title.appendChild(link);
+    }
+    card.appendChild(title);
+
+    if (ch.pros && ch.pros.length) {
+      const g = el('div', 'pc-group');
+      g.appendChild(el('div', 'pc-label pros', '👍 Pontos fortes'));
+      const ul = el('ul', 'pc-list pros');
+      ch.pros.forEach((p) => ul.appendChild(el('li', null, esc(p))));
+      g.appendChild(ul);
+      card.appendChild(g);
+    }
+    if (ch.contras && ch.contras.length) {
+      const g = el('div', 'pc-group');
+      g.appendChild(el('div', 'pc-label contras', '👎 Pontos fracos'));
+      const ul = el('ul', 'pc-list contras');
+      ch.contras.forEach((c) => ul.appendChild(el('li', null, esc(c))));
+      g.appendChild(ul);
+      card.appendChild(g);
+    }
+    wrap.appendChild(card);
   });
 }
 

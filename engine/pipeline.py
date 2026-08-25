@@ -487,7 +487,7 @@ def build_dashboard_snapshot(result, me, competitors, my_reels, comp_reels, netw
         ],
     }
 
-    return {
+    snapshot = {
         "generated_at": now.strftime("%Y-%m-%d %H:%M UTC"),
         "nicho": "Inteligência Artificial",
         "resumo": {
@@ -506,6 +506,24 @@ def build_dashboard_snapshot(result, me, competitors, my_reels, comp_reels, netw
         "takeaway": takeaway,
         "calendar": build_calendar(result, network, now),
     }
+
+    # --- YouTube: pros x contras por canal concorrente (visao da audiencia deles) ---
+    if network == "youtube":
+        comp_channels = []
+        for ch in result.get("competitor_channels", []):
+            pros = ch.get("pros") or []
+            contras = ch.get("contras") or []
+            if not pros and not contras:
+                continue
+            comp_channels.append({
+                "canal": "@" + str(ch.get("channel_name", "")).lstrip("@"),
+                "canal_url": ch.get("channel_url", ""),
+                "pros": pros,
+                "contras": contras,
+            })
+        snapshot["competitor_pros_contras"] = comp_channels
+
+    return snapshot
 
 
 def build_calendar(result, network, start=None):
