@@ -79,6 +79,8 @@ def build(out_path, in_paths):
             "patterns": snap.get("patterns", []),
             "takeaway": snap.get("takeaway"),
             "calendar": snap.get("calendar", []),
+            # exclusivo do YouTube: pros/contras por canal concorrente
+            "competitor_pros_contras": snap.get("competitor_pros_contras", []),
         }
         if key not in merged["network_order"]:
             merged["network_order"].append(key)
