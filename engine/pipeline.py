@@ -198,10 +198,95 @@ def gemini_generate(gemini_key, parts, max_tokens=2048, retries=4, fallback_wait
     return ""
 
 
+def download_bytes(url, timeout=120):
+    """Baixa um arquivo binario (video) de uma URL publica (Instagram/TikTok/YouTube CDN)."""
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.read(), resp.headers.get("Content-Type", "video/mp4")
+
+
+def gemini_upload_file(gemini_key, file_bytes, mime_type="video/mp4", display_name="video", timeout=120):
+    """
+    Faz upload de bytes pra Files API do Gemini (protocolo resumable) e devolve a
+    file_uri interna, ja pronta pra usar em fileData.
+
+    Contorna um bug conhecido do Gemini: pedir pro modelo buscar um video por URL
+    externa (fileData.fileUri = URL do Instagram/TikTok) retorna 429
+    RESOURCE_EXHAUSTED mesmo com cota livre (confirmado em multiplas contas/projetos
+    no forum oficial do Google, ago/2026). Fazendo upload pro proprio armazenamento
+    do Gemini primeiro, o generateContent usa a URI interna e nao aciona esse bug.
+    """
+    num_bytes = len(file_bytes)
+    # Nota: o path de upload fica na RAIZ do dominio (/upload/v1beta/files),
+    # nao dentro de v1beta (GEMINI_BASE = .../v1beta) — por isso troca o segmento.
+    upload_base = GEMINI_BASE.replace("/v1beta", "/upload/v1beta")
+    start_url = f"{upload_base}/files?key={gemini_key}"
+    start_req = urllib.request.Request(
+        start_url,
+        data=json.dumps({"file": {"display_name": display_name}}).encode(),
+        headers={
+            "Content-Type": "application/json",
+            "X-Goog-Upload-Protocol": "resumable",
+            "X-Goog-Upload-Command": "start",
+            "X-Goog-Upload-Header-Content-Length": str(num_bytes),
+            "X-Goog-Upload-Header-Content-Type": mime_type,
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(start_req, timeout=timeout) as resp:
+        upload_url = resp.headers.get("X-Goog-Upload-URL") or resp.headers.get("x-goog-upload-url")
+    if not upload_url:
+        raise RuntimeError("Gemini upload: nao recebeu X-Goog-Upload-URL")
+
+    upload_req = urllib.request.Request(
+        upload_url,
+        data=file_bytes,
+        headers={
+            "Content-Length": str(num_bytes),
+            "X-Goog-Upload-Offset": "0",
+            "X-Goog-Upload-Command": "upload, finalize",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(upload_req, timeout=timeout) as resp:
+        info = json.loads(resp.read().decode())
+    file_meta = info.get("file", {})
+    file_uri = file_meta.get("uri")
+    file_name = file_meta.get("name")
+    if not file_uri:
+        raise RuntimeError(f"Gemini upload: resposta sem file.uri ({info})")
+
+    # Videos sao processados de forma assincrona (state PROCESSING -> ACTIVE).
+    # Poll rapido antes de usar no generateContent.
+    state = file_meta.get("state", "")
+    for _ in range(10):
+        if state == "ACTIVE":
+            break
+        if state == "FAILED":
+            raise RuntimeError("Gemini upload: arquivo marcado como FAILED")
+        time.sleep(3)
+        get_req = urllib.request.Request(
+            f"{GEMINI_BASE}/{file_name}?key={gemini_key}", method="GET"
+        )
+        with urllib.request.urlopen(get_req, timeout=30) as resp:
+            file_meta = json.loads(resp.read().decode())
+        state = file_meta.get("state", "")
+
+    return file_uri, file_meta.get("mimeType", mime_type)
+
+
 def transcribe_video(gemini_key, video_url):
+    try:
+        video_bytes, content_type = download_bytes(video_url)
+        mime_type = content_type.split(";")[0].strip() or "video/mp4"
+        gemini_uri, gemini_mime = gemini_upload_file(gemini_key, video_bytes, mime_type)
+    except Exception as e:
+        log(f"download/upload do video falhou ({str(e)[:80]})")
+        return ""
+
     parts = [
         {"text": TRANSCRIPTION_PROMPT},
-        {"fileData": {"mimeType": "video/mp4", "fileUri": video_url}},
+        {"fileData": {"mimeType": gemini_mime, "fileUri": gemini_uri}},
     ]
     try:
         # Alguns links de mídia do TikTok retornam 429 genérico enquanto o vídeo
