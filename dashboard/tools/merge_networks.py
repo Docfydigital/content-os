@@ -13,6 +13,7 @@ Uso:
   python3 merge_networks.py OUT.json IN_A.json IN_B.json [IN_C.json ...]
 """
 import json
+import os
 import sys
 
 
@@ -32,18 +33,31 @@ def net_key(snap):
 
 
 def build(out_path, in_paths):
+    # CARREGA o multi-rede existente primeiro (se houver) — preserva redes
+    # que não estão sendo re-rodadas nesta chamada (ex: rodar --only tiktok
+    # não deve apagar o instagram já salvo).
+    existing = {}
+    existing_order = []
+    nicho = None
+    if os.path.exists(out_path):
+        try:
+            prev = load(out_path)
+            existing = dict(prev.get("networks", {}) or {})
+            existing_order = list(prev.get("network_order", []) or existing.keys())
+            nicho = prev.get("nicho")
+        except Exception:
+            pass  # latest.json corrompido/vazio — segue do zero
+
     merged = {
         "generated_at": None,
-        "nicho": None,
+        "nicho": nicho,
         "multi_network": True,
-        "network_order": [],
-        "networks": {},
+        "network_order": list(existing_order),
+        "networks": existing,
         # resumo agregado (recalculado)
         "resumo": {},
     }
-    total_posts = 0
     latest_gen = ""
-    formats = []
 
     for p in in_paths:
         snap = load(p)
@@ -53,7 +67,7 @@ def build(out_path, in_paths):
         emoji = meta.get("emoji", "")
         posts = meta.get("posts", [])
 
-        # pacote completo da rede
+        # pacote completo da rede (SOBRESCREVE apenas esta rede)
         merged["networks"][key] = {
             "label": label,
             "emoji": emoji,
@@ -66,16 +80,23 @@ def build(out_path, in_paths):
             "takeaway": snap.get("takeaway"),
             "calendar": snap.get("calendar", []),
         }
-        merged["network_order"].append(key)
+        if key not in merged["network_order"]:
+            merged["network_order"].append(key)
 
-        # agrega metadados
-        total_posts += (snap.get("resumo", {}) or {}).get("posts_analisados", 0)
         g = snap.get("generated_at", "")
         if g > latest_gen:
             latest_gen = g
         if not merged["nicho"]:
             merged["nicho"] = snap.get("nicho")
-        f = (snap.get("resumo", {}) or {}).get("melhor_formato")
+
+    # resumo agregado: recalculado sobre TODAS as redes presentes (antigas + novas)
+    total_posts = 0
+    formats = []
+    for key in merged["network_order"]:
+        net = merged["networks"].get(key, {})
+        r = net.get("resumo", {}) or {}
+        total_posts += r.get("posts_analisados", 0)
+        f = r.get("melhor_formato")
         if f:
             formats.append(f)
 
@@ -90,7 +111,7 @@ def build(out_path, in_paths):
 
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(merged, f, ensure_ascii=False, indent=2)
-    print(f"OK: {len(merged['network_order'])} redes fundidas -> {out_path}")
+    print(f"OK: {len(merged['network_order'])} redes no total -> {out_path}")
     print("redes:", ", ".join(merged["network_order"]))
     print("posts agregados:", total_posts)
 
