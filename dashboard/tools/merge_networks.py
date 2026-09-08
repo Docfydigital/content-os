@@ -81,6 +81,8 @@ def build(out_path, in_paths):
             "calendar": snap.get("calendar", []),
             # exclusivo do YouTube: pros/contras por canal concorrente
             "competitor_pros_contras": snap.get("competitor_pros_contras", []),
+            # lista operacional de posts da semana (status de publicacao)
+            "posts_semana": snap.get("posts_semana", []),
         }
         if key not in merged["network_order"]:
             merged["network_order"].append(key)

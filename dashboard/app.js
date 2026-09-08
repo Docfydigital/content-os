@@ -68,6 +68,7 @@ function render(data) {
     renderPatterns(data.patterns || []);
     renderTakeaway(data.takeaway);
     renderCalendar(data.calendar || []);
+    renderPostsSemana(data.posts_semana || []);
     renderProsContras(data.competitor_pros_contras || []);
   }
 }
@@ -105,6 +106,7 @@ function selectNetwork(key) {
   renderPatterns(n.patterns || []);
   renderTakeaway(n.takeaway);
   renderCalendar(n.calendar || []);
+  renderPostsSemana(n.posts_semana || []);
   renderProsContras(n.competitor_pros_contras || []);
 }
 
@@ -346,6 +348,33 @@ function renderCalendar(cal) {
     d.appendChild(el('div', 'net', esc(c.rede) + ' · ' + esc(c.formato)));
     d.appendChild(el('div', 'idea', esc(c.ideia)));
     if (c.hook_sugerido) d.appendChild(el('span', 'hooktag', '💡 ' + esc(c.hook_sugerido)));
+    wrap.appendChild(d);
+  });
+}
+
+// posts da semana: lista operacional com status de publicação
+const PS_STATUS_LBL = { pendente: 'Pendente', agendado: 'Agendado', publicado: 'Publicado', falhou: 'Falhou' };
+function renderPostsSemana(items) {
+  const sec = document.getElementById('postssemana-sec');
+  const wrap = document.getElementById('postssemana');
+  if (!sec || !wrap) return;
+  if (!items || !items.length) { sec.style.display = 'none'; return; }
+  sec.style.display = '';
+  wrap.innerHTML = '';
+  items.forEach((p) => {
+    const d = el('div', 'ps-item');
+    const top = el('div', 'ps-top');
+    top.appendChild(el('div', 'ps-dia', esc(p.dia)));
+    top.appendChild(el('span', 'ps-status ' + esc(p.status || 'pendente'), PS_STATUS_LBL[p.status] || esc(p.status || 'Pendente')));
+    d.appendChild(top);
+    d.appendChild(el('div', 'ps-net', esc(p.rede) + ' · ' + esc(p.formato)));
+    d.appendChild(el('div', 'ps-idea', esc(p.ideia)));
+    if (p.hook_sugerido) d.appendChild(el('div', 'ps-hook', '💡 ' + esc(p.hook_sugerido)));
+    if (p.link_publicado) {
+      const link = el('a', 'ps-link', 'Ver publicação →');
+      link.href = p.link_publicado; link.target = '_blank'; link.rel = 'noopener';
+      d.appendChild(link);
+    }
     wrap.appendChild(d);
   });
 }

@@ -487,6 +487,7 @@ def build_dashboard_snapshot(result, me, competitors, my_reels, comp_reels, netw
         ],
     }
 
+    calendar_snapshot = build_calendar(result, network, now)
     snapshot = {
         "generated_at": now.strftime("%Y-%m-%d %H:%M UTC"),
         "nicho": "Inteligência Artificial",
@@ -504,7 +505,9 @@ def build_dashboard_snapshot(result, me, competitors, my_reels, comp_reels, netw
         "roteiros": roteiros,
         "patterns": patterns,
         "takeaway": takeaway,
-        "calendar": build_calendar(result, network, now),
+        "calendar": calendar_snapshot,
+        # lista operacional de posts da semana (status de publicacao)
+        "posts_semana": build_posts_semana(calendar_snapshot, network),
     }
 
     # --- YouTube: pros x contras por canal concorrente (visao da audiencia deles) ---
@@ -524,6 +527,26 @@ def build_dashboard_snapshot(result, me, competitors, my_reels, comp_reels, netw
         snapshot["competitor_pros_contras"] = comp_channels
 
     return snapshot
+
+
+def build_posts_semana(calendar, network):
+    """Deriva posts_semana[] do calendario: a lista operacional de posts da semana
+    com status de publicacao (agendado/publicado/pendente/falhou) e link real.
+    Nasce 'pendente' junto com cada analise; o status evolui via
+    update_posts_semana.py (ou integracao futura com Postpeer)."""
+    net_label = {"instagram": "Instagram", "tiktok": "TikTok", "youtube": "YouTube"}.get(network, network.title())
+    out = []
+    for c in calendar or []:
+        out.append({
+            "dia": c.get("dia", ""),
+            "rede": c.get("rede") or net_label,
+            "formato": c.get("formato", ""),
+            "ideia": c.get("ideia", ""),
+            "hook_sugerido": c.get("hook_sugerido", ""),
+            "status": "pendente",
+            "link_publicado": "",
+        })
+    return out
 
 
 def build_calendar(result, network, start=None):
