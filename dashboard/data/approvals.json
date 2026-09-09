@@ -14,6 +14,14 @@
       "obs": null,
       "por": "dashboard",
       "em": "2026-09-09T17:45:05.763Z"
+    },
+    {
+      "id": "carrossel-filipe-v5",
+      "decisao": "aprovado",
+      "imagens": "genericas",
+      "quem": null,
+      "por": "filipe-telegram",
+      "em": "2026-09-09T21:30:00Z"
     }
   ],
   "rejeitados": [
@@ -27,5 +35,5 @@
       "em": "2026-09-09T17:34:53.484Z"
     }
   ],
-  "ultima_atualizacao": "2026-09-09T17:45:05.763Z"
+  "ultima_atualizacao": "2026-09-09T21:30:00Z"
 }
