@@ -11,7 +11,69 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "script_carrossel": [
+        {
+          "n": 1,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Não comece a automatizar seus processos com IA em 2026 antes de instalar estes 3 plugins essenciais.→ Leia até o final"
+        },
+        {
+          "n": 2,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Todo mundo está tentando usar inteligência artificial para produzir mais rápido no próximo ano."
+        },
+        {
+          "n": 3,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "O problema é que gerar volume sem estrutura só cria ruído e afasta a sua audiência."
+        },
+        {
+          "n": 4,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "A virada real não está em acumular ferramentas complexas, mas em conectar os plugins certos ao seu fluxo."
+        },
+        {
+          "n": 5,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Ativo 1: O validador de concorrentes que mapeia exatamente o que está funcionando no seu mercado agora."
+        },
+        {
+          "n": 6,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Ativo 2: O gerador de ganchos focados em reter a atenção nos primeiros segundos do vídeo."
+        },
+        {
+          "n": 7,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Ativo 3: O estruturador de roteiros validados que transforma ideias soltas em narrativas de alta retenção."
+        },
+        {
+          "n": 8,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Como usar na prática:\n→ Conecte a IA ao seu banco de dados\n→ Automatize a análise de métricas\n→ Padronize a sua linha editorial"
+        },
+        {
+          "n": 9,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "O erro comum: delegar 100% da criação para a IA sem aplicar a sua visão estratégica única."
+        },
+        {
+          "n": 10,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Organize todo o seu processo com o Content OS do @FilipeYabok.ia.→ Comente 'EU QUERO' para receber o acesso."
+        }
+      ]
     },
     {
       "id": "car_instagram_2",
@@ -24,7 +86,69 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "script_carrossel": [
+        {
+          "n": 1,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Pare de gastar dinheiro com ferramentas caras de IA. → Esta biblioteca secreta faz exatamente o mesmo de graça."
+        },
+        {
+          "n": 2,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "O mercado quer te convencer de que você precisa assinar cinco softwares diferentes para criar conteúdo profissional."
+        },
+        {
+          "n": 3,
+          "tipo": "texto",
+          "tema": "dark",
+          "texto": "A verdade é que você está pagando caro por interfaces bonitas enquanto o motor por trás é o mesmo."
+        },
+        {
+          "n": 4,
+          "tipo": "foto",
+          "tema": "light",
+          "texto": "Foi por isso que criamos o Content OS. O ecossistema definitivo para quem quer escala sem desperdício."
+        },
+        {
+          "n": 5,
+          "tipo": "texto",
+          "tema": "dark",
+          "texto": "→ Analisa o perfil dos seus concorrentes em segundos para identificar o que realmente funciona no seu nicho."
+        },
+        {
+          "n": 6,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "→ Entrega hooks validados que capturam a atenção nos primeiros segundos de leitura."
+        },
+        {
+          "n": 7,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Roteiros prontos estruturados para reter a audiência do início ao fim, sem complicação."
+        },
+        {
+          "n": 8,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Tudo centralizado em um único lugar, desenhado pelo @FilipeYabok.ia para acelerar seus resultados."
+        },
+        {
+          "n": 9,
+          "tipo": "texto",
+          "tema": "dark",
+          "texto": "O erro comum é focar na ferramenta mais cara em vez do processo que gera conversão."
+        },
+        {
+          "n": 10,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Domine a inteligência artificial sem quebrar o seu caixa. → Comente 'OS' para receber o acesso completo."
+        }
+      ]
     },
     {
       "id": "car_instagram_3",
@@ -37,7 +161,69 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "script_carrossel": [
+        {
+          "n": 1,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Como clonar a estratégia de conteúdo das maiores marcas do mundo usando apenas uma skill do Claude.\n\n→ O segredo que ninguém te conta"
+        },
+        {
+          "n": 2,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Criar conteúdo que realmente converte exige análise profunda de dezenas de referências.\n\nO problema? Leva horas que você não tem."
+        },
+        {
+          "n": 3,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "A maioria dos criadores tenta adivinhar o que funciona.\n\nCopiam formatos cegamente e falham em gerar engajamento real."
+        },
+        {
+          "n": 4,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "A virada: você não precisa de uma equipe inteira de inteligência.\n\nPrecisa apenas da engenharia certa."
+        },
+        {
+          "n": 5,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Conheça o Content OS: o sistema definitivo criado por @FilipeYabok.ia para dominar a criação com IA."
+        },
+        {
+          "n": 6,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Ele automatiza o trabalho pesado analisando os padrões dos seus maiores concorrentes em minutos."
+        },
+        {
+          "n": 7,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Com apenas uma skill do Claude, você extrai a estrutura exata por trás dos virais."
+        },
+        {
+          "n": 8,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "O que você ganha com o método:\n\n→ Análise profunda de concorrentes\n→ Geração automática de hooks validados\n→ Roteiros prontos para gravar"
+        },
+        {
+          "n": 9,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "O erro comum é usar a IA de forma genérica, pedindo textos vazios sem contexto estratégico."
+        },
+        {
+          "n": 10,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Pare de adivinhar o que postar.\n\nComente \"CONTENT\" para garantir acesso ao sistema."
+        }
+      ]
     },
     {
       "id": "car_instagram_4",
@@ -50,7 +236,69 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "script_carrossel": [
+        {
+          "n": 1,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Se você usa ChatGPT ou Claude para criar roteiros ou código, você está perdendo metade da performance por não usar isso.\n\n→ O segredo que o @FilipeYabok.ia usa"
+        },
+        {
+          "n": 2,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Ferramentas de IA genéricas entregam resultados genéricos.\n\nElas não conhecem seu negócio, seu público e nem o seu tom de voz."
+        },
+        {
+          "n": 3,
+          "tipo": "texto",
+          "tema": "dark",
+          "texto": "O resultado? Horas perdidas editando prompts longos e frustração com respostas superficiais.\n\nVocê continua fazendo o trabalho braçal."
+        },
+        {
+          "n": 4,
+          "tipo": "foto",
+          "tema": "light",
+          "texto": "A verdadeira virada não é escrever prompts melhores.\n\nÉ ter um sistema que pensa com a sua estrutura."
+        },
+        {
+          "n": 5,
+          "tipo": "texto",
+          "tema": "dark",
+          "texto": "É exatamente isso que o Content OS resolve.\n\nUm ecossistema completo integrado às IAs que automatiza sua criação do zero."
+        },
+        {
+          "n": 6,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "O que ele faz por você:\n\n→ Analisa seus concorrentes automaticamente\n→ Extrai os ganchos que mais convertem\n→ Gera roteiros prontos no seu padrão"
+        },
+        {
+          "n": 7,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Pare de tratar a IA como um chat isolado.\n\nComece a tratá-la como um departamento inteiro de operações."
+        },
+        {
+          "n": 8,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Menos tempo ajustando texto.\n\nMais tempo focando na estratégia e no crescimento do seu perfil."
+        },
+        {
+          "n": 9,
+          "tipo": "texto",
+          "tema": "dark",
+          "texto": "O erro comum é achar que você precisa dominar programação para ter processos automatizados.\n\nVocê só precisa da ferramenta certa."
+        },
+        {
+          "n": 10,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Tenha o mesmo sistema de IA do @FilipeYabok.ia rodando no seu negócio.\n\nComente \"CONTENT\" para receber o acesso."
+        }
+      ]
     },
     {
       "id": "car_instagram_5",
@@ -63,7 +311,69 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "script_carrossel": [
+        {
+          "n": 1,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "O Google acabou de liberar 100 skills gratuitas que transformam seu assistente de IA em um especialista sênior. → Desbloqueie o novo nível"
+        },
+        {
+          "n": 2,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Até ontem, usar inteligência artificial exigia prompts complexos e resultados genéricos que exigiam horas de reescrita."
+        },
+        {
+          "n": 3,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "A promessa de produtividade virava frustração quando o modelo não entendia a profundidade do seu mercado."
+        },
+        {
+          "n": 4,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Isso mudou. O acesso a essas 100 novas habilidades muda completamente a forma como criadores estruturam sua operação."
+        },
+        {
+          "n": 5,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "Com as diretrizes certas, a IA deixa de ser apenas um chat de conversação e assume papéis analíticos avançados."
+        },
+        {
+          "n": 6,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "É exatamente essa lógica que aplicamos no Content OS do @FilipeYabok.ia para automatizar a criação sem perder a identidade."
+        },
+        {
+          "n": 7,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "O sistema foi desenhado para extrair o máximo desses novos recursos nativos da plataforma."
+        },
+        {
+          "n": 8,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "O que você consegue estruturar agora:\n→ Análise profunda de concorrentes\n→ Geração de hooks validados\n→ Criação de roteiros completos"
+        },
+        {
+          "n": 9,
+          "tipo": "texto",
+          "tema": "light",
+          "texto": "O erro comum é continuar usando IA como um bloco de notas glorificado, ignorando o poder das especializações."
+        },
+        {
+          "n": 10,
+          "tipo": "foto",
+          "tema": "dark",
+          "texto": "Domina as novas skills e acelere sua produção com o Content OS. → Comente 'SKILLS' para receber o guia completo."
+        }
+      ]
     }
   ],
   "ideias_video": [
@@ -78,7 +388,8 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "av_completo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe aponta para a tela do computador com expressão séria.\nÁUDIO: \"Não comece a automatizar seus processos com IA em 2026 antes de instalar estes três plugins.\"\n\n[CENA 2: GRAVAÇÃO DE TELA RÁPIDA]\nVISUAL: Tela mostrando o terminal e código rodando.\nÁUDIO: \"O primeiro otimiza o output do seu agente e corta o uso de tokens pela metade sem perder precisão.\"\n\n[CENA 3: GRAVAÇÃO DE TELA]\nVISUAL: Interface de roteamento de modelos de IA.\nÁUDIO: \"O segundo conecta você a mais de 300 provedores gratuitos, trocando de modelo automaticamente quando o seu limite acaba.\"\n\n[CENA 4: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe olhando diretamente para a câmera, gesticulando.\nÁUDIO: \"E o terceiro transforma toda a sua base de código em um grafo de conhecimento para o agente não desperdiçar memória.\"\n\n[CENA 5: INT. ESCRITÓRIO – DIA]\nVISUAL: Texto em destaque na tela: COMENTE 'FUTURO'.\nÁUDIO: \"Quer testar esse stack completo no seu negócio? Comente 'FUTURO' que eu te mando o passo a passo no direct.\""
     },
     {
       "id": "vid_instagram_2",
@@ -91,7 +402,8 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "av_completo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe balançando a cabeça em sinal de negação, sorrindo levemente.\nÁUDIO: \"Pare de gastar dinheiro com ferramentas caras de IA. Existe uma biblioteca open-source que faz tudo de graça.\"\n\n[CENA 2: GRAVAÇÃO DE TELA]\nVISUAL: Página do GitHub mostrando o repositório da ferramenta com milhares de estrelas.\nÁUDIO: \"O nome é ScrapeGraphAI. Você só precisa dar o link de qualquer site e descrever o que quer em inglês simples.\"\n\n[CENA 3: GRAVAÇÃO DE TELA]\nVISUAL: Dados estruturados aparecendo em formato de lista limpa em segundos.\nÁUDIO: \"Em um minuto ela te devolve uma lista organizada. Perfeita para achar leads, monitorar concorrentes ou fazer pesquisas profundas.\"\n\n[CENA 4: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe voltando para o enquadramento principal, com tom prestativo.\nÁUDIO: \"O melhor é que ela roda perfeitamente integrada com o Claude e com os principais agentes de código do mercado.\"\n\n[CENA 5: INT. ESCRITÓRIO – DIA]\nVISUAL: Legenda grande na tela: COMENTE 'PRODUTO'.\nÁUDIO: \"Se você quer o link direto para essa ferramenta, comente 'PRODUTO' aqui embaixo que eu te envio no direct.\""
     },
     {
       "id": "vid_instagram_3",
@@ -104,7 +416,8 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "av_completo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe gesticulando com as mãos abertas, tom de revelação.\nÁUDIO: \"Como clonar a estratégia visual e de conteúdo das maiores marcas do mundo usando apenas uma skill do Claude.\"\n\n[CENA 2: GRAVAÇÃO DE TELA]\nVISUAL: Arquivos de design system de marcas como Apple e Tesla sendo abertos.\nÁUDIO: \"Alguém fez engenharia reversa em mais de 2.000 sites de referência global e compactou tudo em arquivos que a IA consegue ler.\"\n\n[CENA 3: GRAVAÇÃO DE TELA]\nVISUAL: Interface gerando um site com paleta de cores e tipografia de alto padrão.\nÁUDIO: \"O Claude analisa identidade visual, cores, tipografia e espaçamento, aplicando o mesmo padrão de excelência direto no seu projeto.\"\n\n[CENA 4: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe sorrindo para a câmera, confiante.\nÁUDIO: \"Chega de criar designs amadores do zero quando você pode usar o padrão de empresas bilionárias.\"\n\n[CENA 5: INT. ESCRITÓRIO – DIA]\nVISUAL: Chamada para ação destacada na tela.\nÁUDIO: \"Quer essa skill de design? Comente 'DESIGN' que eu te envio o link direto no seu direct.\""
     },
     {
       "id": "vid_instagram_4",
@@ -117,7 +430,8 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "av_completo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe inclinado para frente, olhando fixamente para a lente.\nÁUDIO: \"Se você usa ChatGPT ou Claude para criar roteiros ou código, você está perdendo metade da performance por um motivo simples.\"\n\n[CENA 2: GRAVAÇÃO DE TELA RÁPIDA]\nVISUAL: Texto genérico gerado por IA sendo deletado.\nÁUDIO: \"O texto sai engessado, técnico e sem a sua voz real, porque faltam instruções contextuais avançadas no seu prompt.\"\n\n[CENA 3: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe gesticulando com naturalidade.\nÁUDIO: \"A solução não é parar de usar IA, mas injetar skills especializadas que aplicam gatilhos mentais e tom humano direto na raiz da criação.\"\n\n[CENA 4: GRAVAÇÃO DE TELA]\nVISUAL: Copiando um bloco de comando estruturado para dentro da ferramenta.\nÁUDIO: \"Com o comando certo, o modelo aprende exatamente o seu ritmo de comunicação e retém a atenção do público do início ao fim.\"\n\n[CENA 5: INT. ESCRITÓRIO – DIA]\nVISUAL: Texto piscando na tela: COMENTE 'HABILIDADE'.\nÁUDIO: \"Se você quer essa skill de roteiros humanos e magnéticos, comente 'HABILIDADE' que eu mando no seu direct.\""
     },
     {
       "id": "vid_instagram_5",
@@ -130,8 +444,10 @@
       "status": "pendente",
       "imagens": null,
       "quem": null,
-      "obs": null
+      "obs": null,
+      "av_completo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe segurando o celular e mostrando a tela rapidamente.\nÁUDIO: \"O Google acabou de liberar mais de 100 skills gratuitas que transformam seu Claude ou ChatGPT em especialistas oficiais.\"\n\n[CENA 2: GRAVAÇÃO DE TELA]\nVISUAL: Repositório com mais de 18 mil estrelas no GitHub.\nÁUDIO: \"Em vez de adivinhar comandos, seu agente de IA passa a seguir os playbooks oficiais do ecossistema do Google.\"\n\n[CENA 3: GRAVAÇÃO DE TELA]\nVISUAL: Código executando integrações com Analytics, Gemini e Firebase.\nÁUDIO: \"Isso abrange desde Google Analytics e Ads até Cloud e Firebase, permitindo construir aplicações robustas sem errar a arquitetura.\"\n\n[CENA 4: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe reforçando o ponto com as mãos.\nÁUDIO: \"Ter o conhecimento oficial da gigante de buscas direto no seu ambiente de desenvolvimento muda o jogo.\"\n\n[CENA 5: INT. ESCRITÓRIO – DIA]\nVISUAL: Chamada para ação com palavra-chave.\nÁUDIO: \"Quer acessar essa biblioteca de skills do Google? Comente 'GOOGLE' que eu te mando o link no direct.\""
     }
   ],
-  "gerado_de": "2026-09-09 02:14 UTC"
+  "gerado_de": "2026-09-09 02:14 UTC",
+  "scripts_gerados_em": "2026-09-09"
 }
