@@ -1,0 +1,137 @@
+{
+  "ideias_carrossel": [
+    {
+      "id": "car_instagram_1",
+      "tipo": "carrossel",
+      "rede": "Instagram",
+      "titulo": "Não comece a automatizar seus processos com IA em 2026 antes de instalar estes 3 plugins essenciais.",
+      "por_que": "Adapta o framework de alerta preventivo do Nick Saraev combinando urgência temporal (2026) com a promessa de uma curadoria direta de ferramentas de produtividade.",
+      "referencia": "https://www.instagram.com/p/DcwCCgivcIQ/",
+      "baseado_em": "hook #1 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    },
+    {
+      "id": "car_instagram_2",
+      "tipo": "carrossel",
+      "rede": "Instagram",
+      "titulo": "Pare de gastar dinheiro com ferramentas caras de IA. Esta biblioteca secreta faz exatamente o mesmo de graça.",
+      "por_que": "Ataca a dor financeira imediata do usuário e oferece uma alternativa aberta e gratuita, gerando alto interesse e engajamento nos comentários.",
+      "referencia": "https://www.instagram.com/p/Dc3zXkXSxpH/",
+      "baseado_em": "hook #2 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    },
+    {
+      "id": "car_instagram_3",
+      "tipo": "carrossel",
+      "rede": "Instagram",
+      "titulo": "Como clonar a estratégia de conteúdo das maiores marcas do mundo usando apenas uma skill do Claude.",
+      "por_que": "Promete um resultado aspiracional de alto valor (estratégia de marcas gigantes) acessível através de uma instrução simples de IA.",
+      "referencia": "https://www.instagram.com/p/DctX3CCPLtd/",
+      "baseado_em": "hook #3 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    },
+    {
+      "id": "car_instagram_4",
+      "tipo": "carrossel",
+      "rede": "Instagram",
+      "titulo": "Se você usa ChatGPT ou Claude para criar roteiros ou código, você está perdendo metade da performance por não usar isso.",
+      "por_que": "Usa o viés de perda oculta, fazendo o criador ou desenvolvedor duvidar do seu próprio método atual de uso da inteligência artificial.",
+      "referencia": "https://www.instagram.com/p/Dc6IUUVvmUE/",
+      "baseado_em": "hook #4 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    },
+    {
+      "id": "car_instagram_5",
+      "tipo": "carrossel",
+      "rede": "Instagram",
+      "titulo": "O Google acabou de liberar 100 skills gratuitas que transformam seu assistente de IA em um especialista sênior.",
+      "por_que": "Combina autoridade institucional de peso (Google) com gratuidade e transformação de capacidade técnica instantânea.",
+      "referencia": "https://www.instagram.com/p/Dcgdhd_vinC/",
+      "baseado_em": "hook #5 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    }
+  ],
+  "ideias_video": [
+    {
+      "id": "vid_instagram_1",
+      "tipo": "video",
+      "rede": "Instagram",
+      "titulo": "Não comece a automatizar seus processos com IA em 2026 antes de instalar estes 3 plugins essenciais.",
+      "roteiro_resumo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe aponta para a tela do computador com expressão séria.\nÁUDIO: \"Não comece a automatizar seus processos com IA em 2026 antes de instalar estes três plugins.\"\n\n[CENA 2: GRAVAÇÃO DE TELA RÁPIDA]\nVISUAL: Tela mostrando o terminal e código rodando.\nÁUDIO: \"O ",
+      "duracao": "45 segundos",
+      "baseado_em": "roteiro #1 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    },
+    {
+      "id": "vid_instagram_2",
+      "tipo": "video",
+      "rede": "Instagram",
+      "titulo": "Pare de gastar dinheiro com ferramentas caras de IA. Esta biblioteca secreta faz exatamente o mesmo de graça.",
+      "roteiro_resumo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe balançando a cabeça em sinal de negação, sorrindo levemente.\nÁUDIO: \"Pare de gastar dinheiro com ferramentas caras de IA. Existe uma biblioteca open-source que faz tudo de graça.\"\n\n[CENA 2: GRAVAÇÃO DE TELA]\nVISUAL: Página do GitHub mostrando o repositó",
+      "duracao": "42 segundos",
+      "baseado_em": "roteiro #2 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    },
+    {
+      "id": "vid_instagram_3",
+      "tipo": "video",
+      "rede": "Instagram",
+      "titulo": "Como clonar a estratégia de conteúdo das maiores marcas do mundo usando apenas uma skill do Claude.",
+      "roteiro_resumo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe gesticulando com as mãos abertas, tom de revelação.\nÁUDIO: \"Como clonar a estratégia visual e de conteúdo das maiores marcas do mundo usando apenas uma skill do Claude.\"\n\n[CENA 2: GRAVAÇÃO DE TELA]\nVISUAL: Arquivos de design system de marcas como Apple ",
+      "duracao": "48 segundos",
+      "baseado_em": "roteiro #3 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    },
+    {
+      "id": "vid_instagram_4",
+      "tipo": "video",
+      "rede": "Instagram",
+      "titulo": "Se você usa ChatGPT ou Claude para criar roteiros ou código, você está perdendo metade da performance por não usar isso.",
+      "roteiro_resumo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe inclinado para frente, olhando fixamente para a lente.\nÁUDIO: \"Se você usa ChatGPT ou Claude para criar roteiros ou código, você está perdendo metade da performance por um motivo simples.\"\n\n[CENA 2: GRAVAÇÃO DE TELA RÁPIDA]\nVISUAL: Texto genérico gerado",
+      "duracao": "46 segundos",
+      "baseado_em": "roteiro #4 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    },
+    {
+      "id": "vid_instagram_5",
+      "tipo": "video",
+      "rede": "Instagram",
+      "titulo": "O Google acabou de liberar 100 skills gratuitas que transformam seu assistente de IA em um especialista sênior.",
+      "roteiro_resumo": "[CENA 1: INT. ESCRITÓRIO – DIA]\nVISUAL: Filipe segurando o celular e mostrando a tela rapidamente.\nÁUDIO: \"O Google acabou de liberar mais de 100 skills gratuitas que transformam seu Claude ou ChatGPT em especialistas oficiais.\"\n\n[CENA 2: GRAVAÇÃO DE TELA]\nVISUAL: Repositório com mais de 18 mil estr",
+      "duracao": "44 segundos",
+      "baseado_em": "roteiro #5 da análise Instagram",
+      "status": "pendente",
+      "imagens": null,
+      "quem": null,
+      "obs": null
+    }
+  ],
+  "gerado_de": "2026-09-09 02:14 UTC"
+}
