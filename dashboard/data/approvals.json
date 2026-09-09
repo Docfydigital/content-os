@@ -5,6 +5,15 @@
       "decisao": "aprovado",
       "por": "dashboard",
       "em": "2026-09-08T20:01:04.880Z"
+    },
+    {
+      "id": "car_instagram_3",
+      "decisao": "aprovado",
+      "imagens": "genericas",
+      "quem": null,
+      "obs": null,
+      "por": "dashboard",
+      "em": "2026-09-09T17:45:05.763Z"
     }
   ],
   "rejeitados": [
@@ -18,5 +27,5 @@
       "em": "2026-09-09T17:34:53.484Z"
     }
   ],
-  "ultima_atualizacao": "2026-09-09T17:34:53.484Z"
+  "ultima_atualizacao": "2026-09-09T17:45:05.763Z"
 }
