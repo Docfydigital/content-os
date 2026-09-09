@@ -5,17 +5,18 @@
       "decisao": "aprovado",
       "por": "dashboard",
       "em": "2026-09-08T20:01:04.880Z"
-    },
-    {
-      "id": "car_instagram_1",
-      "decisao": "aprovado",
-      "imagens": "famoso",
-      "quem": "TESTE-VALIDACAO",
-      "obs": null,
-      "por": "dashboard",
-      "em": "2026-09-09T17:34:52.289Z"
     }
   ],
-  "rejeitados": [],
-  "ultima_atualizacao": "2026-09-09T17:34:52.289Z"
+  "rejeitados": [
+    {
+      "id": "car_instagram_1",
+      "decisao": "rejeitado",
+      "imagens": null,
+      "quem": null,
+      "obs": null,
+      "por": "dashboard",
+      "em": "2026-09-09T17:34:53.484Z"
+    }
+  ],
+  "ultima_atualizacao": "2026-09-09T17:34:53.484Z"
 }
